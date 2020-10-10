@@ -45,6 +45,25 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "http://webapi2000.azurewebsites.net/api/Course",
+                type: "Get",
+                success: function (result) {
+                    console.log(result);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            })
+        })
+    </script>
+
+
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>
